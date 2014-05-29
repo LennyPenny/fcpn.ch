@@ -1,0 +1,22 @@
+.fcpnchBtn {
+	text-decoration: none !important;
+    display: inline-flex;
+    overflow: hidden;
+    margin-top: -3px;
+    height: 1.5em;
+    width: 5em;
+    background-color: LightGreen;
+    font-family: proxima-nova;
+    font-size: 1.2em;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 6px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-family: Tahoma;
+    box-shadow: rgb(100, 100, 100) 0px 0px 2px 0px;
+}
+
+.fcpnchBtn:hover {
+    box-shadow: inset rgb(100, 100, 100) 0px 0px 3px 0px;
+}

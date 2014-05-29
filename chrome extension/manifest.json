@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+
+	"name": "fcpn.ch",
+	"version": "0.1",
+	"description": "Adds a button to shorten facepunch links.",
+
+	"author": "Lennart Bernhardt",
+
+	"permissions": [
+		"*://*.facepunch.com/showthread*", "*://facepunch.com/showthread*", 
+		"clipboardWrite"
+	],
+
+	"background": {
+		"scripts": ["jQuery2.1.min.js", "background.js"]
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["*://*.facepunch.com/showthread*", "*://facepunch.com/showthread*"],
+			"css": ["fcpnch.css"],
+			"js": ["jQuery2.1.min.js", "fcpnch.js"]
+		}
+	]
+}
