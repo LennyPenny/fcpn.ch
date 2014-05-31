@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="fcpnchIt">
+    
+<head>
+    <meta charset="utf-8">
+    <title>Facepunch it!</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <script type="text/javascript" src="//use.typekit.net/kfc3qij.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-animate.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body id="bodey">
+    <div id="container">
+        <div id="header"><span style="color: red;">facepunch</span> it!</div>
+        
+        <div id="shortner" ng-controller="shortner">
+            <div id="inputCon">
+                <input id="input" type="text" ng-model="toShortn" ng-change="onChange()" placeholder="Enter link to shorten here">
+            </div>
+            <div id="resultCon">
+                <a ng-if="shortned" class="animateIf" id="resLink" href="http://{{shortned}}">{{shortned}}</a>
+                <spa ng-if="invalidIn" class="animateIf">Not a valid input :(</span>
+            </div>
+        </div>
+    </div>
+</body>
+    
+</html>
