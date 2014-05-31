@@ -12,23 +12,32 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-animate.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     
     <script src="js/app.js"></script>
 </head>
 
 <body id="bodey">
     <div id="container">
-        <div id="header"><span style="color: red;">facepunch</span> it!</div>
+        <div id="header"><span style="color: #cc0000;">facepunch</span> it!</div>
         
         <div id="shortner" ng-controller="shortner">
             <div id="inputCon">
-                <input id="input" type="text" ng-model="toShortn" ng-change="onChange()" placeholder="Enter link to shorten here">
+                <input id="input" autofocus type="text" ng-model="toShortn" ng-change="onChange()" placeholder="enter link to shorten here">
             </div>
             <div id="resultCon">
                 <a ng-if="shortned" class="animateIf" id="resLink" href="http://{{shortned}}">{{shortned}}</a>
-                <spa ng-if="invalidIn" class="animateIf">Not a valid input :(</span>
+                <span ng-if="invalidIn" class="animateIf">Not a valid input :(</span>
             </div>
         </div>
+        
+        <div id="extnsns">
+            
+        </div>
+        
+        <footer id="footer">
+            <span class="glyphicon glyphicon-chevron-left icns"></span>/<span class="glyphicon glyphicon-chevron-right icns"></span> <span>with</span> <span class="glyphicon glyphicon-heart icns"></span> <span>by <a href="http://twitter.com/ohitsLenny">Lenny.</a></span>
+        </footer>
     </div>
 </body>
     
