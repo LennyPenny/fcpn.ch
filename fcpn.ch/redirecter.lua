@@ -1,0 +1,38 @@
+local lookUp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+local function to10(str, b)
+	res = 0
+	for i = 1, #str, 1 do
+		local char = string.sub(str, i, i)
+		local pos = string.find(lookUp, char)
+		if not pos then
+			return false, char
+		end
+		pos = pos -1
+
+		res = res + pos * math.pow(b, #str - i)
+	end
+	return res, "fine"
+end
+
+
+local uri = ngx.unescape_uri(string.sub(ngx.var.uri, 2))
+if #uri > 0 then
+	local parts = {}
+	for k, v in string.gmatch(uri, "%w+") do
+		table.insert(parts, k)
+	end
+	if #parts > 2 then ngx.print(#parts.." parts are too much") return end
+	for k, v in pairs(parts) do
+		local postID, err = to10(v, 62)
+		if not postID then ngx.say("Invalid char: "..err) return end
+		parts[k] = postID
+	end
+	if #parts == 1 then
+		ngx.redirect("http://facepunch.com/showthread.php?t="..parts[1])
+	else
+		ngx.redirect("http://facepunch.com/showthread.php?t="..parts[1].."&p="..parts[2].."#post"..parts[2])
+	end
+else
+	ngx.redirect("http://shortn.fcpn.ch")
+end
