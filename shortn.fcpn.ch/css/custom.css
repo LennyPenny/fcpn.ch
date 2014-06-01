@@ -51,24 +51,13 @@ color: green;
 .animateIf.ng-enter.ng-enter-active {
   opacity:1;
 }
-#footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    font-size: 1.5em;
-    font-weight: 400;
-    background-color: rgba(150, 150, 150, .25);
-}
-
-
 
 .icns {
     font-size: .75em;
 }
 
 #extnsns {
-    padding-top: 4em;
+    padding-top: 6em;
     font-size: 2.5em;
 }
 
@@ -82,4 +71,18 @@ color: green;
 
 #extsnIcns {
     padding-top: .75em;
+}
+
+#userScript {
+    font-size:  .5em;
+}
+
+#footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 400;
+    background-color: rgba(150, 150, 150, .25);
 }
