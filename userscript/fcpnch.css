@@ -1,0 +1,20 @@
+.fcpnchBtn {
+	text-decoration: none !important;
+    display: inline-flex;
+    overflow: hidden;
+    margin-top: -3px;
+    height: 1.5em;
+    width: 4em;
+    margin: -1px;
+    background-color: #eee;
+    font-family: proxima-nova;
+    border: 1px solid #aaa;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-family: Tahoma;
+}
+
+.fcpnchBtn:hover {
+    background-color: #ffa;
+}
