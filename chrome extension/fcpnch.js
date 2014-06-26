@@ -1,10 +1,3 @@
-function getThreadID() {
-	var re = /t=\w+/g;
-
-	return $(location).attr("href").match(re)[0].slice(2)
-};
-var threadID = Number(getThreadID());
-
 var lookUp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 function base62(n, b) {
 	var res = []
@@ -15,8 +8,6 @@ function base62(n, b) {
 	} while (n > 0);
 	return res.join("");
 }
-
-var shortThreadID = base62(threadID, 62);
 
 var shortner = document.createElement("a");
 shortner.innerHTML = "shortn";
@@ -30,6 +21,6 @@ $(".fcpnchBtn").click(function(event) {
 
 	var shortPostID = base62(postID, 62);
 
-	var toCopy = "http://fcpn.ch/" + shortThreadID + "/" + shortPostID;
+	var toCopy = "http://fcpn.ch/" + shortPostID;
 	chrome.runtime.sendMessage(toCopy);
 });
