@@ -17,22 +17,9 @@ end
 
 
 local uri = ngx.unescape_uri(string.sub(ngx.var.uri, 2))
-if #uri > 0 then
-	local parts = {}
-	for k, v in string.gmatch(uri, "%w+") do
-		table.insert(parts, k)
-	end
-	if #parts > 2 then ngx.print(#parts.." parts are too much") return end
-	for k, v in pairs(parts) do
-		local postID, err = to10(v, 62)
-		if not postID then ngx.say("Invalid char: "..err) return end
-		parts[k] = postID
-	end
-	if #parts == 1 then
-		ngx.redirect("http://facepunch.com/showthread.php?t="..parts[1])
-	else
-		ngx.redirect("http://facepunch.com/showthread.php?t="..parts[1].."&p="..parts[2].."#post"..parts[2])
-	end
-else
-	ngx.redirect("http://shortn.fcpn.ch")
-end
+if #uri == 0 then ngx.redirect("http://shortn.fcpn.ch") return end
+
+local postID, err = to10(string.match(uri, "%w+"), 62)
+if not postID then ngx.say("Invalid char: "..err) return end
+
+ngx.redirect("http://facepunch.com/showthread.php?p="..parts[1].."#post"..parts[1])
