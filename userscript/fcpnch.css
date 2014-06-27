@@ -17,4 +17,5 @@
 
 .fcpnchBtn:hover {
     background-color: #ffa;
+    cursor: pointer;
 }
