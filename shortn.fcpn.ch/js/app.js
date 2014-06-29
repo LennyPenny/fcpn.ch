@@ -23,7 +23,6 @@ angular.module("fcpnchIt", ["ngAnimate"])
                     var threadID = "";
                     var postID = "";
                     
-                    console.log(arr);
                     for (var tag in arr) {
                         if (arr[tag].slice(0, 2) == "p=") {
                             postID = arr[tag].slice(2);
@@ -35,13 +34,12 @@ angular.module("fcpnchIt", ["ngAnimate"])
                         }
                     }
                     
-                    var shortThreadID = base62(Number(threadID), 62);
                     var shortPostID = base62(Number(postID), 62);
                     
                     if (postID.length > 0) {
-                        $scope.shortned = "fcpn.ch/" + shortThreadID + "/" + shortPostID;
+                        $scope.shortned = "fcpn.ch/" + shortPostID;
                     } else {
-                        $scope.shortned = "fcpn.ch/" + shortThreadID;
+                        $scope.invalidIn = true;
                     }
                 } else {
                     $scope.invalidIn = true;
