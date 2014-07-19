@@ -30,7 +30,9 @@ chrome.runtime.onMessage.addListener(callBack);
 chrome.webRequest.onBeforeRequest.addListener(
 	function(newPage) {
 		postId = base10(newPage.url.match(/^https?:\/\/fcpn\.ch\/(.*)$/)[1]);
-		return { redirectUrl: "http://www.facepunch.com/showthread.php?p="+postId+"#post"+postId }
+		if (postId) {
+			return { redirectUrl: "http://www.facepunch.com/showthread.php?p="+postId+"#post"+postId }
+		}
 	}, {
 		urls: ["*://fcpn.ch/*"]
 	}, [
