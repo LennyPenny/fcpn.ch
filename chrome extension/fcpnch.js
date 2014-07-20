@@ -15,12 +15,14 @@ shortner.className = "fcpnchBtn"
 
 $(".nodecontrols").prepend(shortner);
 
-$(".fcpnchBtn").click(function(event) {
+$(".fcpnchBtn").on('click', function(event) {
 	var postID = $(this).next()[0].name;
 	postID = Number(postID.replace("post", ""));
-
+	$(this).text("copied!");
 	var shortPostID = base62(postID, 62);
 
 	var toCopy = "http://fcpn.ch/" + shortPostID;
 	chrome.runtime.sendMessage(toCopy);
+}).on('mouseout', function(e) {
+	$(this).text("shortn");
 });

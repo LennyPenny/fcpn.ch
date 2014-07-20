@@ -8,8 +8,12 @@
 	"author": "Lennart Bernhardt",
 
 	"permissions": [
-		"*://*.facepunch.com/showthread*", "*://facepunch.com/showthread*", 
-		"clipboardWrite"
+		"*://*.facepunch.com/showthread*",
+		"*://facepunch.com/showthread*",
+		"*://fcpn.ch/*",
+		"clipboardWrite",
+		"webRequest",
+		"webRequestBlocking"
 	],
 
 	"background": {
