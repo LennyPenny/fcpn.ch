@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 
 	"name": "fcpn.ch",
-	"version": "0.212",
+	"version": "0.213",
 	"description": "Adds a button to shorten facepunch links.",
 
 	"author": "Lennart Bernhardt",
