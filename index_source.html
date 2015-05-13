@@ -1,0 +1,21 @@
+<!doctype html>
+<title>fcpn.ch redirecting...</title>
+<script type="text/javascript">
+	var hash = window.location.hash.slice(1);
+	if (hash == "") {
+		window.location = "shortn"
+	} else {
+		var lookUp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+		function b62to10(str) {
+			var res = 0;
+			for (var idx = 0; idx < str.length; idx++) {
+				var character = str.charAt(idx);
+				var pos = lookUp.indexOf(character);
+				res = res + pos * Math.pow(62, idx);
+			}
+			return res;
+		}
+		var postID = b62to10(hash);
+		window.location = "http://facepunch.com/showthread.php?p=" + postID + "#post" + postID;
+	}
+</script>
