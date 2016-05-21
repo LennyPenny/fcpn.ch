@@ -2,12 +2,28 @@
 layout: page
 permalink: /404.html
 ---
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>404</title>
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-  </body>
-</html>
+<!doctype html>
+<title>fcpn.ch redirecting...</title>
+<script type="text/javascript" data-cfasync="false">
+	var path = window.location.pathname.slice(1);
+	if (path == "") {
+		window.location = "shortn"
+	} else {
+		var lookUp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+		function b62to10(str) {
+			var res = 0;
+			for (var idx = 0; idx < str.length; idx++) {
+				var character = str.charAt(idx);
+				var pos = lookUp.indexOf(character);
+				console.log(character, pos)
+				res += pos * Math.pow(62, str.length - idx - 1);
+			}
+			return res;
+		}
+		var postID = b62to10(path);
+		window.location = "http://facepunch.com/showthread.php?p=" + postID + "#post" + postID;
+	}
+</script>
+<body>
+	<noscript>This redirecter requires javascript to save on hosting costs, it's fully open sourced <a href="https://github.com/fcpnch/fcpnch.github.io/">here</a> and also directly served from GitHub. </noscript>
+</body>
